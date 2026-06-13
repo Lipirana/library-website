@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparkle & Co</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#232323;
+    --bg2:#0b3550;
+    --card:#2b2b2b;
+    --text:#ffffff;
+    --muted:#b7b7b7;
+    --accent:#11a5d8;
+    --border:#3a3a3a;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* NAV */
+
+nav{
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 0;
+}
+
+.logo{
+    font-weight:700;
+    font-size:1.4rem;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.btn{
+    border:1px solid #666;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:10px;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--accent);
+    border-color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+    padding:90px 0;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.eyebrow{
+    color:var(--accent);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.85rem;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--accent);
+    font-style:italic;
+}
+
+.hero p{
+    color:var(--muted);
+    max-width:500px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:16px;
+}
+
+.bubble{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle at 40% 40%, #8dc6dd, #7fa6b8 55%, #9aa3a8);
+    margin:auto;
+    position:relative;
+}
+.hero-art{
+    position:relative;
+    height:450px;
+}
+
+.main-bubble{
+    width:420px;
+    height:420px;
+    display:block;
+    margin:auto;
+}
+
+.main-bubble circle{
+    fill:rgba(168,220,255,.12);
+    stroke:rgba(168,220,255,.25);
+    stroke-width:4;
+}
+
+.floating-drop{
+    position:absolute;
+    border-radius:50%;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    animation:float 6s ease-in-out infinite;
+}
+
+.drop1{
+    width:70px;
+    height:70px;
+    top:40px;
+    right:50px;
+}
+
+.drop2{
+    width:45px;
+    height:45px;
+    bottom:100px;
+    left:60px;
+}
+
+.drop3{
+    width:25px;
+    height:25px;
+    top:160px;
+    left:10px;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+.bubble::before,
+.bubble::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+}
+
+.bubble::before{
+    width:80px;
+    height:80px;
+    background:rgba(255,255,255,.18);
+    left:50px;
+    top:60px;
+}
+
+.bubble::after{
+    width:40px;
+    height:40px;
+    background:rgba(255,255,255,.22);
+    right:55px;
+    bottom:70px;
+}
+
+/* STATS */
+
+.stats{
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    padding:24px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.icon{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#d6f0fb;
+}
+.trust-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+}
+
+<div class="cards">
+
+<div class="card">
+
+<div class="service-icon">
+🏠
+</div>
+
+<h3>Home Deep Clean</h3>
+
+<p>
+Kitchen degreasing, bathroom sanitization,
+floor polishing and detailed dust removal.
+</p>
+
+<ul>
+<li>Kitchen deep clean</li>
+<li>Bathroom sanitization</li>
+<li>Appliance cleaning</li>
+<li>Floor polishing</li>
+</ul>
+
+<span class="price">
+From ₹999
+</span>
+
+</div>
+
+<div class="card">
+
+<div class="service-icon">
+🌀
+</div>
+
+<h3>Regular Maintenance</h3>
+
+<p>
+Keep your home fresh with weekly or
+fortnightly cleaning visits.
+</p>
+
+<ul>
+<li>Dusting</li>
+<li>Mopping</li>
+<li>Bathroom refresh</li>
+<li>Trash removal</li>
+</ul>
+
+<span class="price">
+From ₹599
+</span>
+
+</div>
+
+<div class="card">
+
+<div class="service-icon">
+🏢
+</div>
+
+<h3>Office & Commercial</h3>
+
+<p>
+Professional cleaning for workspaces and
+retail environments.
+</p>
+
+<ul>
+<li>Workstations</li>
+<li>Meeting rooms</li>
+<li>Retail floors</li>
+<li>Sanitization</li>
+</ul>
+
+<span class="price">
+Custom Quote
+</span>
+
+</div>
+
+<div class="card">
+
+<div class="service-icon">
+➜
+</div>
+
+<h3>Move-In / Move-Out</h3>
+
+<p>
+Thorough property preparation for new
+tenants or owners.
+</p>
+
+<ul>
+<li>Cabinet interiors</li>
+<li>Window tracks</li>
+<li>Deep bathrooms</li>
+<li>Deposit checklist</li>
+</ul>
+
+<span class="price">
+From ₹1499
+</span>
+
+</div>
+
+</div>
+/* SERVICES */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
+}
+
+.card{
+    border:1px solid var(--border);
+    background:var(--card);
+    padding:30px;
+    border-radius:12px;
+}
+
+.card h3{
+    margin:18px 0 10px;
+}
+
+.card p{
+    color:var(--muted);
+}
+
+.price{
+    color:var(--accent);
+    margin-top:15px;
+    display:block;
+}
+
+/* HOW IT WORKS */
+
+.how{
+    background:var(--bg2);
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.step{
+    border-left:1px solid rgba(255,255,255,.15);
+    padding-left:25px;
+}
+
+.step-number{
+    font-size:3rem;
+    font-weight:700;
+    color:rgba(255,255,255,.15);
+}
+
+/* REVIEWS */
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.review{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:28px;
+}
+
+.stars{
+    color:#f8b400;
+    margin-bottom:15px;
+}
+
+.user{
+    margin-top:18px;
+    color:#ddd;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+
+    background:#0b3550;
+
+    clip-path:polygon(
+        0 10%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    padding-top:140px;
+}
+
+.cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.cta h2 span{
+    color:var(--accent);
+    font-style:italic;
+}
+
+.cta p{
+    color:var(--muted);
+    margin-bottom:30px;
+}
+
+.form{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+input{
+    width:420px;
+    max-width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#2d2d2d;
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:30px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#aaa;
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.hero p{
+    margin:auto auto 30px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.stats-grid,
+.steps{
+    grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+}
+
+@media(max-width:600px){
+
+.stats-grid,
+.steps{
+    grid-template-columns:1fr;
+}
+
+.footer-inner{
+    flex-direction:column;
+    gap:15px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">sparkle<span>&co</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Pricing</a></li>
+        </ul>
+
+        <a href="#" class="btn">Book now ↗</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div>
+            <div class="eyebrow">Premium Residential & Commercial</div>
+
+            <h1>
+                A home that
+                breathes <span>clean</span>
+            </h1>
+
+            <p>
+                We handle the scrubbing so you don't have to think about it.
+                Trained cleaners, eco-friendly products, flexible schedules.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn">Get a free quote ↗</a>
+                <a href="#" class="btn">See how it works</a>
+            </div>
+        </div>
+
+        <div class="hero-art">
+
+<svg class="main-bubble" viewBox="0 0 500 500">
+    <circle cx="250" cy="250" r="180"/>
+</svg>
+
+<div class="floating-drop drop1"></div>
+<div class="floating-drop drop2"></div>
+<div class="floating-drop drop3"></div>
+
+</div>
+
+    </div>
+</section>
+
+<div class="stats">
+    <div class="container stats-grid">
+
+        <div class="stat">
+           <div class="trust-icon">✦</div>
+            <div>4,800+ homes cleaned</div>
+        </div>
+
+        <div class="stat">
+            <div class="trust-icon">🛡</div>
+            <div>4.9 / 5 average rating</div>
+        </div>
+
+        <div class="stat">
+            <div class="trust-icon">⏱</div>
+            <div>Same-day booking available</div>
+        </div>
+
+        <div class="stat">
+           <div class="trust-icon">🌿</div>
+            <div>100% eco-friendly products</div>
+        </div>
+
+    </div>
+</div>
+
+<section>
+    <div class="container">
+
+        <div class="eyebrow">What we offer</div>
+        <h2 class="section-title">Cleaning for every space</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon"></div>
+                <h3>Home deep clean</h3>
+                <p>Every corner, every surface including inside appliances.</p>
+                <span class="price">From ₹999 per session</span>
+            </div>
+
+            <div class="cards">
+
+<div class="card">
+
+<div class="service-icon">
+🏠
+</div>
+
+<h3>Home Deep Clean</h3>
+
+<p>
+Kitchen degreasing, bathroom sanitization,
+floor polishing and detailed dust removal.
+</p>
+
+<ul>
+<li>Kitchen deep clean</li>
+<li>Bathroom sanitization</li>
+<li>Appliance cleaning</li>
+<li>Floor polishing</li>
+</ul>
+
+<span class="price">
+From ₹999
+</span>
+
+</div>
+
+<div class="card">
+
+<div class="service-icon">
+🌀
+</div>
+
+<h3>Regular Maintenance</h3>
+
+<p>
+Keep your home fresh with weekly or
+fortnightly cleaning visits.
+</p>
+
+<ul>
+<li>Dusting</li>
+<li>Mopping</li>
+<li>Bathroom refresh</li>
+<li>Trash removal</li>
+</ul>
+
+<span class="price">
+From ₹599
+</span>
+
+</div>
+
+<div class="card">
+
+<div class="service-icon">
+🏢
+</div>
+
+<h3>Office & Commercial</h3>
+
+<p>
+Professional cleaning for workspaces and
+retail environments.
+</p>
+
+<ul>
+<li>Workstations</li>
+<li>Meeting rooms</li>
+<li>Retail floors</li>
+<li>Sanitization</li>
+</ul>
+
+<span class="price">
+Custom Quote
+</span>
+
+</div>
+
+<div class="card">
+
+<div class="service-icon">
+➜
+</div>
+
+<h3>Move-In / Move-Out</h3>
+
+<p>
+Thorough property preparation for new
+tenants or owners.
+</p>
+
+<ul>
+<li>Cabinet interiors</li>
+<li>Window tracks</li>
+<li>Deep bathrooms</li>
+<li>Deposit checklist</li>
+</ul>
+
+<span class="price">
+From ₹1499
+</span>
+
+</div>
+
+</div>
+    </div>
+</section>
+
+<section class="how">
+    <div class="container">
+        <div class="eyebrow">How it works</div>
+        <h2 class="section-title">Three steps to spotless</h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Book in 60 Seconds</h3>
+                <p>
+                Choose your service, property size,
+                date and special requests.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>We Match Your Cleaner</h3>
+                <p>
+                A trained professional is assigned
+                to your booking.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Cleaning Day</h3>
+                <p>
+                We arrive fully equipped and follow
+                our detailed checklist.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Quality Guarantee</h3>
+                <p>
+                Review the service and request
+                a touch-up if needed.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="eyebrow">Customer Reviews</div>
+        <h2 class="section-title">What people are saying</h2>
+
+        <div class="reviews-grid">
+
+            <div class="review">
+
+            <div class="stars">
+            ★★★★★
+            </div>
+
+            <p>
+            Booked a move-out clean at 11 PM and
+            the team arrived next morning.
+            The apartment looked brand new.
+            </p>
+
+            <div class="user">
+            Priya Sharma
+            </div>
+
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>Office cleaned in four hours without a spot missed.</p>
+                <div class="user">Arjun K.</div>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>Deep clean was thorough and worth every rupee.</p>
+                <div class="user">Meera R.</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="pricing">
+
+<div class="container">
+
+<div class="eyebrow">
+Pricing
+</div>
+
+<h2 class="section-title">
+Simple transparent pricing
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Essential</h3>
+<h1>₹999</h1>
+<p>Small homes & apartments</p>
+</div>
+
+<div class="card">
+<h3>Standard</h3>
+<h1>₹1499</h1>
+<p>Family homes</p>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<h1>₹2499</h1>
+<p>Large homes</p>
+</div>
+
+<div class="card">
+<h3>Commercial</h3>
+<h1>Custom</h1>
+<p>Office & retail spaces</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="cta">
+    <div class="container">
+
+        <div class="eyebrow">Ready to book?</div>
+
+        <h2>
+            Your cleanest home is
+            one step <span>away</span>
+        </h2>
+
+        <p>
+            Enter your details and we'll send a personalised quote within 10 minutes.
+        </p>
+
+        <div class="form">
+            <input type="text" placeholder="Your email or phone">
+            <a href="#" class="btn">Get my quote ↗</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-inner">
+        <div class="logo">sparkle<span>&co</span></div>
+        <div>© 2026 Sparkle & Co. All rights reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>

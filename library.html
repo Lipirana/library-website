@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudraksha's Study Hub Library</title>
+    <style>
+        :root {
+            --primary: #2e7d32; /* Relaxing green for focus */
+            --dark: #1b5e20;
+            --accent: #fbc02d;
+            --light: #f9fbf9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: #333;
+        }
+
+        /* Header & Hero */
+        header {
+           background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('1000070119.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .price-badge {
+            background-color: var(--accent);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Info Section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .facility-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .facility-item {
+            background: #fff;
+            padding: 15px;
+            border-left: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        .facility-item span { margin-right: 15px; font-size: 1.5rem; }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .btn {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--dark);
+    transform: translateY(-3px); /* Lifts the button up */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+        /* Gallery Styling */
+#gallery {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px; /* Adjust height as you like */
+    object-fit: cover; /* This prevents the images from stretching */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    filter: brightness(1.1); /* Makes the photo pop */
+}
+
+/* Modal (Background overlay) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); 
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: white;
+    margin: 15% auto; 
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-content h3 { color: var(--primary); margin-top: 0; }
+.modal-content p { font-size: 1.1rem; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <h1>Rudraksha's Study Hub Library</h1>
+
+        <p>The perfect environment for competitive exams and focused learning.</p>
+
+        <div class="price-badge">Monthly Rent: ₹600</div>
+
+    </header>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>⏰ Timings</h3>
+            <p>Open Daily except last Sunday of the month<br><strong>8:00 AM - 10:00 PM</strong></p>
+        </div>
+        <div class="info-card">
+            <h3>📍Location</h3>
+            <p>Adarsh Nagar, Opposite Old Akansha Marble,<br>Near Shiv Mandir, Kashipur, Uttarakhand 244713</p>
+        </div>
+        <div class="info-card">
+            <h3>⚡ Personal Space</h3>
+            <p>Single seats with personal charging and lights.</p>
+        </div>
+    </div>
+
+    <section class="facilities">
+        <h2 style="text-align: center;">Our Facilities</h2>
+        <div class="facility-list">
+            <div class="facility-item"><span>📰</span> English & Hindi Newspapers</div>
+            <div class="facility-item"><span>💺</span> Personal Charging Point</div>
+            <div class="facility-item"><span>🥤</span> Clean RO Drinking Water</div>
+            <div class="facility-item"><span>🍱</span> Dedicated Eating Area</div>
+            <div class="facility-item"><span>🚻</span> Separate Washrooms (Boys/Girls)</div>
+            <div class="facility-item"><span>🛡️</span> 24/7 CCTV Camera Surveillance</div>
+            <div class="facility-item"><span>🤫</span> Peaceful & Silent Environment</div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 15px;">
+   <!-- Updated Buttons -->
+<a href="javascript:void(0)" class="btn" onclick="openModal()">Book Your Seat Now</a>
+<a href="javascript:void(0)" class="btn" onclick="openModal()">Contact Us</a>
+    <!-- Location -->
+     <a href="https://maps.app.goo.gl/vqJ9YiBYFhrTAXJy6" target="_blank" class="btn" style="background-color: #d32f2f;">Location</a>
+    </section>
+    
+    <section id="gallery">
+    <h2>Library Gallery</h2>
+    <div class="gallery-grid">
+        <!-- Add as many images as you want here -->
+        <img src="1000070119.jpg" alt="Library Interior">
+        <img src="1000070125.jpg" alt="Study Cubicles">
+        <img src="1000070130.jpg" alt="Sitting Area">
+        <img src="1000070138.jpg" alt="Entrance">
+        <img src="1000070115.jpg" alt="Facilities">
+        <img src="1000070094.jpg" alt="Bookshelf">
+        <img src="1000070127.jpg" alt="Bookshelf">
+        <img src="1000070123.jpg" alt="Bookshelf">
+        <img src="1000070111.jpg" alt="Bookshelf">
+        <img src="1000070117.jpg" alt="Bookshelf">
+    </div>
+</section>
+    <footer>
+    <p>&copy; 2025 Rudraksha's Study Hub Library. All Rights Reserved.</p>
+    <p>Follow us for updates: 
+        <a href="https://www.instagram.com/rudrakshstudyhub?igsh=ZHJ4dDNybHhrNWo0" target="_blank" style="color: #e1306c; text-decoration: none; font-weight: bold;">Instagram</a> | 
+        <a href="https://www.facebook.com/share/1CdAmgiDyP/" target="_blank" style="color: #1877f2; text-decoration: none; font-weight: bold;">Facebook</a>
+    </p>
+</footer>
+<!-- The Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3>Contact Details</h3>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <p>📞 <strong>Phone:</strong> 9411577207</p>
+        <p>📧 <strong>Email:</strong> rudrakshstudyhublibrary@gmail.com</p>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("contactModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+
+    // Close the modal if the user clicks anywhere outside of the white box
+    window.onclick = function(event) {
+        let modal = document.getElementById("contactModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
