@@ -116,36 +116,7 @@
         .lightbox-close { position: fixed; top: 20px; right: 24px; color: white; font-size: 2rem; cursor: pointer; background: rgba(255,255,255,0.1); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; transition: background 0.2s; }
         .lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
-        /* REVIEWS */
-        .reviews-section { background: var(--bg); }
-        .reviews-inner { max-width: 780px; margin: 0 auto; }
-        .reviews-list { display: flex; flex-direction: column; gap: 20px; }
-        .review-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 24px; transition: transform 0.3s, box-shadow 0.3s; display: flex; gap: 20px; align-items: flex-start; }
-        .review-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px var(--shadow); }
-        .review-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
-        .review-right { flex: 1; }
-        .review-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
-        .author-name { font-weight: 600; font-size: 0.95rem; color: var(--text); }
-        .author-since { font-size: 0.76rem; color: var(--text-muted); }
-        .review-stars { color: var(--accent); font-size: 1rem; }
-        .review-text { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; font-style: italic; margin-top: 8px; }
-
-        /* WRITE REVIEW */
-        .write-review { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 30px 28px; margin-top: 36px; }
-        .write-review h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--text); margin-bottom: 6px; }
-        .write-review p.sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 22px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-        .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-        .form-field label { font-size: 0.82rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
-        .form-field input, .form-field textarea, .form-field select { background: var(--bg-section); border: 1px solid var(--border); border-radius: 10px; padding: 11px 14px; font-size: 0.93rem; color: var(--text); font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; outline: none; width: 100%; resize: vertical; }
-        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--primary); }
-        .star-picker { display: flex; gap: 6px; flex-direction: row-reverse; justify-content: flex-end; }
-        .star-picker input { display: none; }
-        .star-picker label { font-size: 1.6rem; cursor: pointer; color: #ccc; transition: color 0.15s; }
-        .star-picker input:checked ~ label, .star-picker label:hover, .star-picker label:hover ~ label { color: var(--accent); }
-        .submit-msg { display: none; background: #e8f5e9; border: 1px solid #a5d6a7; color: #2e7d32; padding: 12px 16px; border-radius: 10px; font-size: 0.9rem; margin-top: 14px; }
-        [data-theme="dark"] .submit-msg { background: #1a3a1a; border-color: #2e7d32; color: #81c784; }
+       
 
         /* FAQ */
         .faq-section { background: var(--bg-section); }
@@ -225,7 +196,7 @@
             .stat-item .num { font-size: 1.5rem; }
             .hero { min-height: 90vh; padding: 90px 20px 50px; }
             .form-row { grid-template-columns: 1fr; }
-            .review-card { flex-direction: column; gap: 14px; }
+           
         }
         @media (max-width: 500px) {
             .gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -347,85 +318,7 @@
     </div>
 </section>
 
-<section class="reviews-section" id="reviews">
-    <div class="reviews-inner">
-        <div class="section-header reveal">
-            <div class="section-label">Student Reviews</div>
-            <h2 class="section-title">What Our Students Say</h2>
-            <p class="section-sub">Real feedback from students who study here every day.</p>
-        </div>
-        <div class="reviews-list" id="reviewsList">
-            <div class="review-card reveal">
-                <div class="review-left">
-                    <div class="avatar">AK</div>
-                </div>
-                <div class="review-right">
-                    <div class="review-header">
-                        <div><div class="author-name">Amit Kumar</div><div class="author-since">SSC Aspirant · Member since 2024</div></div>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                    <p class="review-text">"The silence here is the best part. I cleared my SSC exam while studying here for 3 months. The environment really keeps you focused and motivated."</p>
-                </div>
-            </div>
-            <div class="review-card reveal">
-                <div class="review-left">
-                    <div class="avatar">PS</div>
-                </div>
-                <div class="review-right">
-                    <div class="review-header">
-                        <div><div class="author-name">Priya Sharma</div><div class="author-since">UPSC Aspirant · Member since 2023</div></div>
-                        <div class="review-stars">★★★★★</div>
-                    </div>
-                    <p class="review-text">"Best library in Kashipur. The personal charging point and reading light make such a difference. At ₹600/month, this is the best deal you'll find anywhere."</p>
-                </div>
-            </div>
-            <div class="review-card reveal">
-                <div class="review-left">
-                    <div class="avatar">RV</div>
-                </div>
-                <div class="review-right">
-                    <div class="review-header">
-                        <div><div class="author-name">Rahul Verma</div><div class="author-since">Railway Exam Prep · Member since 2024</div></div>
-                        <div class="review-stars">★★★★☆</div>
-                    </div>
-                    <p class="review-text">"Very clean and well-maintained. The RO water and dedicated eating zone are thoughtful additions. Staff is cooperative and the atmosphere is very productive."</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Write a Review -->
-        <div class="write-review reveal">
-            <h3>✍️ Write a Review</h3>
-            <p class="sub">Share your experience with other students. Your review will be visible to everyone.</p>
-            <div class="form-row">
-                <div class="form-field">
-                    <label>Your Name</label>
-                    <input type="text" id="rName" placeholder="e.g. Rahul Singh" maxlength="50">
-                </div>
-                <div class="form-field">
-                    <label>Exam / Course</label>
-                    <input type="text" id="rCourse" placeholder="e.g. UPSC, SSC, Railway" maxlength="50">
-                </div>
-            </div>
-            <div class="form-field">
-                <label>Your Rating</label>
-                <div class="star-picker">
-                    <input type="radio" id="s5" name="stars" value="5"><label for="s5">★</label>
-                    <input type="radio" id="s4" name="stars" value="4"><label for="s4">★</label>
-                    <input type="radio" id="s3" name="stars" value="3"><label for="s3">★</label>
-                    <input type="radio" id="s2" name="stars" value="2"><label for="s2">★</label>
-                    <input type="radio" id="s1" name="stars" value="1"><label for="s1">★</label>
-                </div>
-            </div>
-            <div class="form-field">
-                <label>Your Review</label>
-                <textarea id="rText" rows="4" placeholder="Tell others about your experience at Rudraksha's Study Hub..." maxlength="500"></textarea>
-            </div>
-            <button class="btn btn-primary btn-sm" onclick="submitReview()">Submit Review →</button>
-            <div class="submit-msg" id="submitMsg">✅ Thank you! Your review has been published.</div>
-        </div>
-    </div>
-</section>
 
 <section class="faq-section" id="faq">
     <div class="faq-inner">
